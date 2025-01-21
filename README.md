@@ -15,7 +15,7 @@ Install the package via composer:
 composer require ijodkor/lone-id
 ```
 
-## Ishlatish va sozlash (Setup)
+## Sozlash (Setup)
 
 1. Muhit o&#8216;zgaruvchilari o&#8216;rnatilinadi (Set environment variables)
 
@@ -45,6 +45,7 @@ ONE_ID_CLIENT_SECRET=<client_secret>
 
 ```dotenv
 ONE_ID_CLIENT_SCOPE=test
+ONE_ID_CLIENT_STATE=test
 ```
 
 ### Web - for monolith website and systems
@@ -64,6 +65,13 @@ Route::get('/one-id/access', [OneIdWebAuthController::class, 'access']);
 ```php
 Route::get('/auth/token', [OneIdAuthController::class, 'token']);
 ```
+
+
+## Ishlatish (Usage)
+ - Api - those urls is ready to use
+   - [POST] /api/one-id/url (name: one-id.url, )
+ - Web - those urls is ready to use
+   - [GET] /one-id/login (name: one-id.login)
 
 ## Foydalanilgan manbalar (References)
 
