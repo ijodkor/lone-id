@@ -1,0 +1,51 @@
+{
+    "name": "ijodkor/one-id",
+    "description": "OneId OAuth package for Laravel/PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ijodkor\\OneId\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anvar Zaripboyev",
+            "email": "anvarindastries@gmail.com"
+        },
+        {
+            "name": "Dilmurod Qurbonboyev",
+            "email": "dilmurodqurbonboyev11@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0",
+        "ijodkor/laravel-api-response": "^1.2",
+        "illuminate/contracts": "^9.21|^10.0|^11.0",
+        "illuminate/support": "^9.21|^10.0|^11.0",
+        "spatie/laravel-package-tools": "^1.18"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0"
+    },
+    "scripts": {
+        "lint": [
+            "@php vendor/bin/phpstan analyse"
+        ],
+        "test": [
+            "@php vendor/bin/phpunit"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijodkor\\OneId\\OneIdServiceProvider"
+            ],
+            "aliases": {
+                "OneId": "Ijodkor\\OneId"
+            }
+        }
+    }
+}
