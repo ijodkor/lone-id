@@ -12,7 +12,7 @@ Yagona identifikatsiya tizimi (Single identification system)
 Install the package via composer:
 
 ```bash
-composer require ijodkor/lone-id
+composer require ijodkor/one-id
 ```
 
 ## Sozlash (Setup)
