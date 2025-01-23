@@ -54,6 +54,7 @@ ONE_ID_CLIENT_STATE=test
 - Define following route in web.php
 
 ```php
+# OneId
 Route::get('/one-id/access', [OneIdWebAuthController::class, 'access']);
 ```
 
@@ -63,6 +64,7 @@ Route::get('/one-id/access', [OneIdWebAuthController::class, 'access']);
 - Define following route in api.php
 
 ```php
+# OneId
 Route::get('/auth/token', [OneIdAuthController::class, 'token']);
 ```
 
