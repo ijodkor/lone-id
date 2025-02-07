@@ -7,7 +7,7 @@ Yagona identifikatsiya tizimi (Single identification system)
 - PHP ^8.0
 - Laravel ^10
 
-## O&#8216;rnatish (Installation)
+## 1. O&#8216;rnatish (Installation)
 
 Install the package via composer:
 
@@ -15,7 +15,13 @@ Install the package via composer:
 composer require ijodkor/one-id
 ```
 
-## Sozlash (Setup)
+Sozlama faylni asosiyga chiqarish
+
+```bash
+php artisan vendor:publish --provider="Ijodkor\OneId\OneIdServiceProvider"
+```
+
+## 2. Sozlash (Setup)
 
 1. Muhit o&#8216;zgaruvchilari o&#8216;rnatilinadi (Set environment variables)
 
@@ -41,14 +47,14 @@ ONE_ID_CLIENT_SECRET=<client_secret>
     'one_id_client_scope' => env('ONE_ID_CLIENT_SCOPE'),
 ```
 
-## Qo&#8216;shimcha sozlamalar (Extra configurations)
+## 3. Qo&#8216;shimcha sozlamalar (Extra configurations)
 
 ```dotenv
 ONE_ID_CLIENT_SCOPE=test
 ONE_ID_CLIENT_STATE=test
 ```
 
-### Web - for monolith website and systems
+### 3.1 Web - for monolith website and systems
 
 - ``php artisan one-id:api-make``
 - Define following route in web.php
@@ -58,22 +64,28 @@ ONE_ID_CLIENT_STATE=test
 Route::get('/one-id/access', [OneIdWebAuthController::class, 'access']);
 ```
 
-### Api - for REST api website and systems
+### 3.2 Api - for REST api website and systems
 
 - ``php artisan one-id:web-make``
 - Define following route in api.php
 
 ```php
 # OneId
-Route::get('/auth/token', [OneIdAuthController::class, 'token']);
+Route::post('/auth/token', [OneIdAuthController::class, 'token']);
 ```
 
+## 4. Ishlatish (Usage)
 
-## Ishlatish (Usage)
- - Api - those urls is ready to use
-   - [POST] /api/one-id/url (name: one-id.url, )
- - Web - those urls is ready to use
-   - [GET] /one-id/login (name: one-id.login)
+Modulni ham API ham odatiy WEB uslubda ishlatish mumkin
+
+- Api
+    1. [POST/GET] [/api/one-id/url](/api/one-id/url) (name: one-id.url) - OneIdga o&#8216;tish uchun havola beradi
+    2. [POST] [/api/auth/token](/api/auth/token) - OneId bergan kod (code) bilan token olish. (Ushbu manzil ixtiyoriy
+       tartibda o&#8216;zgartirilishi mumkin, 3.2 dagi manzil bilan bir xil qo&#8216;yiladi)
+- Web
+    1. [GET] [/one-id/login](/one-id/login) (name: one-id.login) - OneId SSO sahifasiga o*#8216;tadi
+    2. [GET] [/one-id/access](/one-id/access) - OneId orqali kod (code) bilan kirib kelganda tizimga kiritish. (Ushbu
+       manzil ixtiyoriy tartibda o&#8216;zgartirilishi mumkin, 3.1 dagi manzil bilan bir xil qo&#8216;yiladi)
 
 ## Foydalanilgan manbalar (References)
 
@@ -81,4 +93,5 @@ Route::get('/auth/token', [OneIdAuthController::class, 'token']);
 - [Laravel package tools](https://packages.tools/testbench) - Tools for creating Laravel packages
 
 ## Havolalar (Links)
+
 - https://stackoverflow.com/questions/44665234/how-copy-entire-directory-from-one-folder-to-another-using-laravel-5
