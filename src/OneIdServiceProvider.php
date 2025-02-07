@@ -3,6 +3,7 @@
 namespace Ijodkor\OneId;
 
 use Ijodkor\OneId\Console\Commands\OneIdApiMake;
+use Ijodkor\OneId\Console\Commands\OneIdWebMake;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -20,6 +21,6 @@ class OneIdServiceProvider extends PackageServiceProvider {
         $package->name(self::APP_NAME)
             ->hasRoutes('web', 'api')
             ->hasConfigFile('integration')
-            ->hasCommands(OneIdApiMake::class);
+            ->hasCommands(OneIdApiMake::class, OneIdWebMake::class);
     }
 }

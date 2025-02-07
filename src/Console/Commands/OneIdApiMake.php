@@ -28,5 +28,8 @@ class OneIdApiMake extends Command {
         // $provider = app()->getProvider(OneIdServiceProvider::class);
 
         File::copyDirectory(__DIR__ . '/../../../examples/api', app_path('Http/Controllers/Api/OneId'));
+
+        // Info
+        $this->info("Command successfully finished!");
     }
 }

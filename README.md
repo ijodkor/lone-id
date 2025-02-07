@@ -56,7 +56,7 @@ ONE_ID_CLIENT_STATE=test
 
 ### 3.1 Web - for monolith website and systems
 
-- ``php artisan one-id:api-make``
+- ``php artisan one-id:web-make``
 - Define following route in web.php
 
 ```php
@@ -66,7 +66,7 @@ Route::get('/one-id/access', [OneIdWebAuthController::class, 'access']);
 
 ### 3.2 Api - for REST api website and systems
 
-- ``php artisan one-id:web-make``
+- ``php artisan one-id:api-make``
 - Define following route in api.php
 
 ```php
@@ -95,3 +95,4 @@ Modulni ham API ham odatiy WEB uslubda ishlatish mumkin
 ## Havolalar (Links)
 
 - https://stackoverflow.com/questions/44665234/how-copy-entire-directory-from-one-folder-to-another-using-laravel-5
+- https://dev.to/stndc/colors-in-php-command-line-output-4ela
