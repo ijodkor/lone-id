@@ -83,7 +83,7 @@ Modulni ham API ham odatiy WEB uslubda ishlatish mumkin
     2. [POST] [/api/auth/token](/api/auth/token) - OneId bergan kod (code) bilan token olish. (Ushbu manzil ixtiyoriy
        tartibda o&#8216;zgartirilishi mumkin, 3.2 dagi manzil bilan bir xil qo&#8216;yiladi)
 - Web
-    1. [GET] [/one-id/login](/one-id/login) (name: one-id.login) - OneId SSO sahifasiga o*#8216;tadi
+    1. [GET] [/one-id/login](/one-id/login) (name: one-id.login) - OneId SSO sahifasiga o&#8216;tadi
     2. [GET] [/one-id/access](/one-id/access) - OneId orqali kod (code) bilan kirib kelganda tizimga kiritish. (Ushbu
        manzil ixtiyoriy tartibda o&#8216;zgartirilishi mumkin, 3.1 dagi manzil bilan bir xil qo&#8216;yiladi)
 
